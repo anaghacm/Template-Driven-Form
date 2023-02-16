@@ -1,0 +1,38 @@
+@import '../../assets/scss/variables';
+
+.header-module {
+    background-color: $color-primary;
+    padding: $spacer-4 $spacer-0;
+
+    .heading {
+        font-size: $font-xl;
+        font-weight: 700;
+        text-align: right;
+        color: $color-formtext;
+    }
+
+    .container {
+        position: relative;
+
+        .logo-base {
+            position: absolute;
+            left: 0;
+            top: -40px;
+            background-color: $color-formtext;
+            width: 150px;
+            height: 108px;
+            border-right: 100px solid transparent;
+            
+            .logo-icon{
+                font-size: 50px;
+                color: $color-primary;
+                margin-left: 42px;
+                margin-top: 23px;
+                transition: all 0.5s;
+            }
+            
+        }
+
+    }
+
+}

@@ -1,0 +1,55 @@
+<section class="form-module">
+    <p class="heading">Employee Details</p>
+    <form #registerForm class="reg-from" (ngSubmit)="registerDetails(registerForm)">
+        <div class="form-entry name-div">
+            <label for="name">Name</label>
+            <input class="form-control name" type="text" pattern="^[a-zA-Z\s\.]*$" placeholder="name" name="name" required #name="ngModel" ngModel>
+            <span *ngIf="name.invalid && name.touched" class="error-message">Please enter a valid name</span>
+        </div>
+        <div class="form-entry dob-div">
+            <label>Date of Birth</label>
+            <input class="form-control dob" type="date" name="dob" required #dob="ngModel" ngModel>
+            <span *ngIf="dob.invalid && dob.touched" class="error-message">Please enter your date of birth</span>
+        </div>
+        <div class="form-entry email-div">
+            <label>Email</label>
+            <input class="form-control email" type="email" name="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel" ngModel placeholder="email address">
+            <span *ngIf="email.invalid && email.touched" class="error-message">Please enter a valid email</span>
+        </div>
+        <div class="form-entry password-div">
+
+            <!-- Password : atleast one capital letter, small letter, number, spacial charecter and minimum length of 10 -->
+            <label>Password</label>
+            <input class="form-control password" type="password" pattern="(?=^.{10,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"name="password" required #password="ngModel" ngModel placeholder="password">
+            <span *ngIf="password.invalid && password.touched" class="error-message">Please enter a valid password</span>
+        </div>
+        <div class="form-entry phonenumber-div">
+            <label>Phone Number</label>
+            <input class="form-control phonenumber" type="text" pattern="^[0-9]{10}$" name="phonenumber" required #phonenumber="ngModel" ngModel placeholder="phone number">
+            <span *ngIf="phonenumber.invalid && phonenumber.touched" class="error-message">Please enter a valid phone number</span>
+        </div>
+        <div class="form-entry pincode-div">
+            <label>Pin code</label>
+            <input class="form-control pincode" type="text" pattern="^[0-9]{6}$" name="pincode" required #pincode="ngModel" ngModel placeholder="pincode">
+            <span *ngIf="pincode.invalid && pincode.touched" class="error-message">Please enter a valid pin code</span>
+        </div>
+        <div class="form-entry state-div">
+            <label>State</label>
+            <input class="form-control state" type="text" pattern="^[a-zA-Z\s\.]*$" name="state" required #state="ngModel" ngModel placeholder="state">
+            <span *ngIf="state.invalid && state.touched" class="error-message">Please enter your state</span>
+        </div>
+        <div class="form-entry country-div">
+            <label>Country</label>
+            <input class="form-control country" type="text" pattern="^[a-zA-Z\s\.]*$" name="country" required #country="ngModel" ngModel placeholder="country">
+            <span *ngIf="country.invalid && country.touched" class="error-message">Please enter your country</span>
+        </div>
+        <div class="form-entry address-div">
+            <label>Address</label>
+            <textarea class="form-control address" name="address" required #address="ngModel" ngModel cols="30" rows="3" placeholder="address"></textarea>
+            <span *ngIf="address.invalid && address.touched" class="error-message">Please enter your address</span>
+        </div>
+        <div class="btn-div">
+            <button class="btn btn-register" type="submit">Register</button>
+        </div>
+    </form>
+</section>

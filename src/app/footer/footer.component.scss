@@ -1,0 +1,8 @@
+@import '../../assets/scss/variables';
+
+.footer-module{
+    background-color: $color-primary;
+    color: $color-formtext;
+    padding: $spacer-2 $spacer-0;
+    text-align: center;
+}
